@@ -4,6 +4,7 @@ resource "azurerm_resource_group" "resource_group" {
 }
 
 resource "azurerm_kubernetes_cluster" "cluster" {
+  depends_on = [ azurerm_resource_group.resource_group ]
   name                      = var.clustername
   location                  = azurerm_resource_group.resource_group.location
   resource_group_name       = azurerm_resource_group.resource_group.name
