@@ -7,10 +7,12 @@ variable "sqlversion" {
 }
 variable "sqlusername" {
   type = string
+  sensitive = true
 }
 
 variable "sqlpassword" {
   type = string 
+  sensitive = true
 }
 
 variable "created_by" {
